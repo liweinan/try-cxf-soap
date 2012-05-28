@@ -6,7 +6,7 @@
 	</target>
 	
 	<target name="compile" depends="init">
-		<javac srcdir="src" destdir="bin/classes">
+		<javac includeantruntime="false" srcdir="src" destdir="bin/classes">
 			<classpath refid="cxf.classpath"/>
 		</javac>
 	</target>
