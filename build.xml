@@ -6,11 +6,34 @@
 	</target>
 	
 	<target name="compile" depends="init">
-		<javac srcdir="src" destdir="bin/classes"/>
+		<javac srcdir="src" destdir="bin/classes">
+			<classpath refid="cxf.classpath"/>
+		</javac>
 	</target>
 	
-	<target name="clean">
+	<target name="clean" depends="init">
 		<delete dir="bin" />
 		<delete dir="dist" />
-	</target>	
+	</target>
+	
+	<target name="server" depends="compile">
+		<java classname="net.bluedash.ws.HelloService_HelloServiceSOAP_Server"
+			classpath="bin/classes">
+			<classpath refid="cxf.classpath"/>
+		</java>
+	</target>
+
+	<target name="client" depends="compile">
+		<java classname="net.bluedash.ws.HelloService_HelloServiceSOAP_Client"
+			classpath="bin/classes">
+			<classpath refid="cxf.classpath"/>
+		</java>
+	</target>
+	
+	<path id="cxf.classpath">
+	  <pathelement path="bin/classes"/>
+	  <fileset dir="lib">
+	    <include name="*.jar"/>
+	  </fileset>
+	</path>
 </project>
