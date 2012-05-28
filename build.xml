@@ -24,8 +24,8 @@
 	</target>
 
 	<target name="client" depends="compile">
-		<java classname="net.bluedash.ws.HelloService_HelloServiceSOAP_Client"
-			classpath="bin/classes">
+		<java classname="net.bluedash.ws.HelloService_HelloServiceSOAP_Client">
+			<arg file="./src/hello.wsdl"/>
 			<classpath refid="cxf.classpath"/>
 		</java>
 	</target>

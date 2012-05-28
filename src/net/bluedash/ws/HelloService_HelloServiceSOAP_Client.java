@@ -25,7 +25,7 @@ public final class HelloService_HelloServiceSOAP_Client {
 	public static void main(String args[]) throws java.lang.Exception {
 
 		HelloService_Service ss = new HelloService_Service((new File(
-				"/Users/weli/projs/hello/src/hello.wsdl")).toURI().toURL(),
+				args[0])).toURI().toURL(),
 				SERVICE_NAME);
 
 		HelloService port = ss.getHelloServiceSOAP();
