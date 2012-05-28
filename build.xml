@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<project name="try-cxf-soap" default="compile">
+	<target name="init">
+		<mkdir dir="bin/classes" />
+		<mkdir dir="dist" />
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="bin/classes"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="bin" />
+		<delete dir="dist" />
+	</target>	
+</project>
